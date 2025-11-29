@@ -1,0 +1,914 @@
+:root {
+  --blue-dark: #0b2c5f;
+  --blue: #1556a3;
+  --blue-light: #f1f5fb;
+  --orange: #ff7a00;
+  --text-main: #0f1c2f;
+  --text-muted: #64748b;
+  --radius-lg: 18px;
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.15);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-main);
+  background: #ffffff;
+}
+
+
+
+/* ========== LAYOUT HELPERS ========== */
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========== HEADER / NAVBAR ========== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #0b1730;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: #ffffff
+}
+
+.logo-subtitle {
+  font-size: 12px;
+  color: #ffffff
+}
+
+/* Desktop nav */
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  position: relative;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--orange);
+  transition: width 0.2s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 22px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease,
+    color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #ffffff;
+  box-shadow: 0 12px 25px rgba(248, 148, 18, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 35px rgba(248, 148, 18, 0.45);
+}
+
+.btn-outline {
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: #ffffff;
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background: var(--blue-dark);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn-ghost:hover {
+  background: #ffffff;
+  color: var(--blue-dark);
+}
+
+.header-cta {
+  margin-left: 12px;
+}
+
+/* Burger (mobile only) */
+
+.burger {
+  display: none;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: #ffffff;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--text-main);
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* --------- MOBILE MENU --------- */
+
+/* ------ MOBILE NAV CLEAN (Lovable-style) ------ */
+
+.mobile-nav {
+  position: fixed;
+  top: 70px; /* ύψος header */
+  left: 0;
+  right: 0;
+
+  /* Κύριο: δεν ορίζουμε height ή bottom → παίρνει το ύψος του περιεχομένου */
+  display: none;
+  z-index: 49;
+
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  padding: 5px 0 20px;
+  overflow: visible; /* πολύ σημαντικό: χωρίς scroll, χωρίς extended height */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* πολύ soft shadow */
+}
+
+.mobile-nav.open {
+  display: block;
+}
+
+
+.mobile-nav.open {
+  display: block;
+}
+
+
+.mobile-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* LINKS — clean, χωρίς γραμμές */
+.mobile-link {
+  display: block;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-main);
+  background: transparent;
+}
+
+/* ACTIVE (π.χ. Αρχική) με soft πορτοκαλί — όπως Lovable */
+.mobile-link.active {
+  background: rgba(255, 122, 0, 0.13);    /* απαλό πορτοκαλί */
+  border-radius: 12px;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+/* CTA BUTTON */
+.mobile-contact-btn {
+  display: block;
+  margin: 18px 20px 0;
+  background: var(--orange);
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 0;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(255, 122, 0, 0.35);
+}
+
+.mobile-contact-btn:hover {
+  background: #ff8c1f;
+}
+
+
+
+
+/* ========== HERO ========== */
+
+.hero {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  background-image: url("../images/hero-bg.avif");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      90deg,
+      rgba(10, 22, 51, 0.9) 0%,
+      rgba(10, 22, 51, 0.8) 45%,
+      rgba(10, 22, 51, 0) 80%
+    ),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.05), rgba(15, 23, 42, 0.8));
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 70px 20px;
+}
+
+.hero-content {
+  max-width: 560px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 4.2vw, 52px);
+  line-height: 1.05;
+  margin: 0 0 18px;
+}
+
+.hero .accent {
+  color: var(--orange);
+}
+
+.hero p {
+  font-size: 17px;
+  max-width: 520px;
+  color: rgba(226, 232, 240, 0.9);
+  margin-bottom: 26px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ========== STATS ========== */
+
+.stats {
+  background: #ffffff;
+  padding: 34px 0 40px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.stat-box {
+  background: var(--blue-light);
+  border-radius: 18px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--blue-dark);
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ========== GENERIC SECTION ========== */
+
+
+.section {
+  padding: 70px 0;
+}
+
+.section-alt {
+  background: #f8fafc;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 32px;
+  
+}
+
+.section-header h2 {
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+
+.section-header p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* ========== SERVICES CARDS ========== */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 24px 22px 26px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.22);
+}
+
+
+
+.card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 16px;
+  background: var(--blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.card p {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.card-list {
+  padding-left: 18px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.card-list li + li {
+  margin-top: 4px;
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: 26px;
+}
+
+/* ========== WHY US (TWO COLUMN) ========== */
+
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.image-col img {
+  width: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+}
+
+.text-col h2 {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.text-col > p {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.feature {
+  display: flex;
+  gap: 14px;
+  padding: 10px 0;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.feature h4 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.feature p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ========== CTA SECTION ========== */
+
+.cta-section {
+  background: linear-gradient(120deg, var(--blue-dark), var(--blue));
+  color: #ffffff;
+  padding: 60px 0 70px;
+  text-align: center;
+}
+
+.cta-inner h2 {
+  font-size: 30px;
+  margin: 0 0 10px;
+}
+
+.cta-inner p {
+  margin: 0 0 20px;
+  font-size: 15px;
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+
+/* ========== ABOUT PAGE ========== */
+
+/* Hero της σελίδας "Σχετικά" – reuse section / section-alt */
+.page-hero {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+/* μικρό chip τύπου "Από το 1985" */
+.about-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 122, 0, 0.12);
+  color: var(--orange);
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.about-pill-outline {
+  background: #fff;
+  border: 1px solid rgba(255, 122, 0, 0.4);
+}
+
+/* wrapper εικόνας στην about */
+.about-image-wrapper {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.about-image-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* badge πάνω στην εικόνα (38+ χρόνια) */
+.about-badge {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  background: var(--blue-dark);
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 14px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.about-badge-number {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.about-badge-label {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* Αποστολή / Όραμα – grid 2 στηλών, reuse .card για το styling */
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 26px;
+}
+
+/* απλά λέμε ότι αυτές οι cards είναι ίδιες με τις άλλες */
+.mission-card p {
+  color: var(--text-muted);
+}
+
+/* πορτοκαλί version του icon, reuse της .card-icon */
+.card-icon-orange {
+  background: rgba(255, 122, 0, 0.14);
+}
+
+/* Πιστοποιήσεις – πάλι grid 2 στηλών με reuse .card */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 26px;
+}
+
+.cert-card {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.cert-icon {
+  background: rgba(255, 122, 0, 0.12);
+}
+
+.cert-footer {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* λίστα bullets στο section Τεχνολογία */
+.about-list {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.about-list li + li {
+  margin-top: 4px;
+}
+
+
+/* ==== SERVICES PAGE EXTRA LAYOUT ==== */
+
+/* μικρότερο spacing στο hero των inner σελίδων */
+.page-hero .section-header h1 {
+  font-size: 34px;
+}
+
+/* grid με soft-orange feature cards */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background: rgba(255, 250, 245, 0.9);
+}
+
+/* grid για τις χώρες κάλυψης */
+.country-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.country-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  font-weight: 500;
+}
+
+.country-code {
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.country-name {
+  color: var(--text-main);
+}
+
+.country-image-wrapper {
+  width: 100%;
+  max-width: 460px;      /* 🔥 Ορίζει Mέγιστο Πλάτος */
+  border-radius: 22px;
+  overflow: hidden;
+  margin-left: auto;     /* Τη σπρώχνει δεξιά */
+  box-shadow: var(--shadow-soft);
+}
+
+.country-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+
+
+
+/* ========== FOOTER ========== */
+
+.site-footer {
+  background: #0b1730;
+  color: #e5e7eb;
+  margin-top: 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.2fr 1.4fr;
+  gap: 32px;
+  padding: 40px 0 26px;
+}
+
+.footer-logo .logo-icon {
+  background: var(--orange);
+}
+
+.footer-desc {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+.footer-col h4 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+.footer-links li + li {
+  margin-top: 6px;
+}
+
+.footer-links a {
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+  font-size: 12px;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0 14px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 860px) {
+  .main-nav {
+    display: none;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .burger {
+    display: inline-flex;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .two-col {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .image-col {
+    order: -1;
+  }
+
+  @media (max-width: 860px) {
+  .country-image-wrapper {
+    margin: 20px auto 0;
+    max-width: 320px;   /* μικρότερη στο κινητό */
+  }
+}
+
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+   /* --- ABOUT extra για tablet/mobile --- */
+  .mission-grid,
+  .cert-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+    /* --- SERVICES extra για tablet --- */
+    .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .country-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 460px;
+  }
+
+  .hero-inner {
+    padding: 60px 20px 50px;
+  }
+
+  .stats-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cards-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .cta-section {
+    padding: 50px 0 56px;
+  }
+
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+    /* --- SERVICES extra για mobile --- */
+
+    .feature-grid,
+  .country-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+}

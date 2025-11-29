@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autofrigo Trans - European Cold Chain</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-area">
+        <div class="logo-icon">
+          🚚
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">Autofrigo Trans</span>
+          <span class="logo-subtitle">Από το 1985</span>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link active">Αρχική</a></li>
+          <li><a href="about.html" class="nav-link">Σχετικά</a></li>
+          <li><a href="services.html" class="nav-link">Υπηρεσίες</a></li>
+          <li><a href="contact.html" class="nav-link">Επικοινωνία</a></li>
+          <li><a href="gemh.html" class="nav-link">Στοιχεία ΓΕΜΗ</a></li>
+        </ul>
+      </nav>
+
+      <a href="contact.html" class="btn btn-primary header-cta">Επικοινωνήστε</a>
+
+      <!-- Mobile menu button -->
+      <button class="burger" id="burgerBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <nav class="mobile-nav" id="mobileNav">
+      <ul>
+        <li> <a href="index.html" class="mobile-link active">Αρχική</a></li>
+        <li><a href="about.html" class="mobile-link">Σχετικά</a></li>
+        <li><a href="services.html" class="mobile-link">Υπηρεσίες</a></li>
+        <li><a href="contact.html" class="mobile-link">Επικοινωνία</a></li>
+        <li><a href="gemh.html" class="mobile-link">Στοιχεία ΓΕΜΗ</a></li>
+      </ul>
+
+      <a href="contact.html" class="mobile-contact-btn">Επικοινωνήστε</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1>
+          Διεθνείς Μεταφορές<br/>
+          <span class="accent">Ευπαθών Προϊόντων</span>
+        </h1>
+        <p>
+          Με υπερσύγχρονο στόλο ψυγείων σε όλη την Ευρώπη από το 1985.
+          Εξασφαλίζουμε την ασφάλεια και την ποιότητα των προϊόντων σας σε κάθε βήμα της διαδρομής.
+        </p>
+        <div class="hero-actions">
+          <a href="services.html" class="btn btn-ghost">Οι Υπηρεσίες μας</a>
+          <a href="about.html" class="btn btn-ghost">Σχετικά με μας</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat-box">
+        <div class="stat-number">38+</div>
+        <div class="stat-label">Χρόνια Εμπειρίας</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Χώρες Προορισμού</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Online Tracking</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Επιτυχημένες Μεταφορές</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Οι Υπηρεσίες μας</h2>
+        <p>Παρέχουμε ολοκληρωμένες λύσεις logistics για κάθε ανάγκη μεταφοράς.</p>
+      </header>
+
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-icon">🚛</div>
+          <h3>Διεθνείς Μεταφορές</h3>
+          <p>
+            Εβδομαδιαίες αναχωρήσεις προς Ιταλία, Αυστρία, Γερμανία, Πολωνία, Βέλγιο,
+            Ολλανδία και Αγγλία.
+          </p>
+          <ul class="card-list">
+            <li>Full &amp; Groupage φορτία</li>
+            <li>Τήρηση χρονοδιαγραμμάτων</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">❄️</div>
+          <h3>Ψυκτικές Μεταφορές</h3>
+          <p>
+            Υπερσύγχρονος στόλος με ψυκτικούς θαλάμους τελευταίας τεχνολογίας
+            για ψύξη και κατάψυξη.
+          </p>
+          <ul class="card-list">
+            <li>Έλεγχος θερμοκρασίας 24/7</li>
+            <li>ISO 22000:2018 πιστοποίηση</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📦</div>
+          <h3>Αποθήκευση</h3>
+          <p>
+            Σύγχρονο αποθηκευτικό κέντρο με δυνατότητα ελεύθερης εναπόθεσης
+            και βιομηχανικά ψυγεία.
+          </p>
+          <ul class="card-list">
+            <li>Ασφάλεια &amp; φύλαξη</li>
+            <li>Ελεγχόμενες συνθήκες</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="section-cta">
+        <a href="services.html" class="btn btn-outline">Δείτε Όλες τις Υπηρεσίες</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY US ===== -->
+  <section id="about" class="section section-alt">
+    <div class="container two-col">
+      <div class="image-col">
+        <!-- Μπορείς να βάλεις δική σου εικόνα φορτηγών -->
+        <img src= "images/refrigerated-truck.png"
+             alt="Στόλος φορτηγών ψυγείων" />
+      </div>
+      <div class="text-col">
+        <h2>Γιατί να μας επιλέξετε;</h2>
+        <p>
+          Η Autofrigo Trans ξεχωρίζει στον χώρο των διεθνών μεταφορών χάρη στον
+          συνδυασμό εμπειρίας, τεχνολογίας και αφοσίωσης στην ποιότητα.
+        </p>
+
+        <div class="feature">
+          <div class="feature-icon">🛡️</div>
+          <div>
+            <h4>Ασφάλεια &amp; Πιστοποιήσεις</h4>
+            <p>Πιστοποιημένοι με ISO 22000:2018 και ISO 9001:2015 για την ασφάλεια των τροφίμων.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🕒</div>
+          <div>
+            <h4>Εβδομαδιαίες Αναχωρήσεις</h4>
+            <p>Τακτικά δρομολόγια προς όλες τις κύριες αγορές της Ευρώπης.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">📍</div>
+          <div>
+            <h4>GPS Tracking 24/7</h4>
+            <p>Παρακολούθηστε τα φορτία σας σε πραγματικό χρόνο με το σύστημά μας.</p>
+          </div>
+        </div>
+
+        <a href="contact.html" class="btn btn-outline">Μάθετε Περισσότερα</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA / CONTACT PREVIEW ===== -->
+  <section id="contact" class="cta-section">
+    <div class="container cta-inner">
+      <h2>Έτοιμοι να ξεκινήσουμε;</h2>
+      <p>
+        Επικοινωνήστε μαζί μας σήμερα και ανακαλύψτε πως μπορούμε να βελτιώσουμε την εφοδιαστική σας αλυσίδα.
+      </p>
+      <div class="cta-actions">
+        <a href="mailto:info@autofrigo.gr" class="btn btn-primary">Ζητήστε Προσφορά</a>
+        <a href="tel:+302102849240" class="btn btn-ghost">Καλέστε μας</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="logo-area footer-logo">
+          <div class="logo-icon">🚚</div>
+          <div class="logo-text">
+            <span class="logo-title">Autofrigo Trans</span>
+            <span class="logo-subtitle">Από το 1985</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Ηγέτες στις διεθνείς μεταφορές ευπαθών προϊόντων με υπερσύγχρονο στόλο ψυγείων.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Γρήγοροι Σύνδεσμοι</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Αρχική</a></li>
+          <li><a href="about.html">Σχετικά</a></li>
+          <li><a href="services.html">Υπηρεσίες</a></li>
+          <li><a href="gemh.html">Στοιχεία ΓΕΜΗ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Υπηρεσίες</h4>
+        <ul class="footer-links">
+          <li>Διεθνείς Μεταφορές</li>
+          <li>Groupage Φορτία</li>
+          <li>Αποθήκευση</li>
+          <li>Μεταφορά Οικοσκευών</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Επικοινωνία</h4>
+        <ul class="footer-links">
+          <li>Οδυσσέως και Ζακύνθου 1<br>14452 Μεταμόρφωση, Αττική</li>
+          <li><a href="tel:+302102849240">210 2849240-3</a></li>
+          <li><a href="mailto:info@autofrigo.gr">info@autofrigo.gr</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="gemh" class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© 2025 Autofrigo Trans Ltd. Με την επιφύλαξη παντός δικαιώματος.</span>
+        <span>Πιστοποιήσεις: ISO 22000:2018 | ISO 9001:2015</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
