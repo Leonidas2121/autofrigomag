@@ -886,13 +886,17 @@ body {
   background: #0b1730;
   color: #e5e7eb;
   margin-top: 0;
+   padding-left: 0;
+    padding-right: 0;
 }
 
-.footer-grid {
+  .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1.2fr 1.2fr 1.4fr;
   gap: 32px;
   padding: 40px 0 26px;
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 .footer-logo .logo-icon {
@@ -920,6 +924,7 @@ body {
 
 .footer-links li + li {
   margin-top: 6px;
+  line-height: 1.45;
 }
 
 .footer-links a {
@@ -940,13 +945,15 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 12px 0 14px;
+   padding-left: 24px;
+    padding-right: 24px;
   gap: 10px;
   flex-wrap: wrap;
 }
 
 /* ========== RESPONSIVE ========== */
 
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
   .main-nav {
     display: none;
   }
@@ -1010,7 +1017,7 @@ body {
 
 }
 
-@media (max-width: 640px) {
+@media (max-width: 480px) {
 
  
   .hero {
