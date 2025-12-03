@@ -660,11 +660,7 @@ body {
   background: rgba(255, 122, 0, 0.12);
 }
 
-.cert-footer {
-  margin-top: 18px;
-  font-size: 13px;
-  color: var(--text-muted);
-}
+
 
 /* λίστα bullets στο section Τεχνολογία */
 .about-list {
@@ -743,6 +739,143 @@ body {
   display: block;
   object-fit: cover;
 }
+
+
+/* ========== CONTACT PAGE ========== */
+.map-wrapper {
+  width: 100%;
+  height: 360px;              /* σταθερό ύψος κάρτας χάρτη */
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background: #ffffff;        /* για να μη φανεί ποτέ “διάφανο” */
+}
+
+.map-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+.contact-cta-inline {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
+/* ========== GEMH PAGE ========== */
+
+.gemh-page {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.gemh-header {
+  margin-bottom: 24px;
+}
+
+.gemh-header h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  color: var(--blue-dark);
+}
+
+.gemh-header p {
+  margin: 0;
+  max-width: 520px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* κάθε κάρτα ΓΕΜΗ */
+.gemh-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gemh-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  padding: 18px 22px 18px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.gemh-card-header h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  color: var(--blue-dark);
+}
+
+/* μικρή μπάρα στο κάτω μέρος κάρτας */
+.gemh-card-bar {
+  height: 4px;
+  width: 40%;
+  max-width: 220px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--blue), var(--blue-light));
+  margin-top: 12px;
+}
+
+/* tables */
+
+.gemh-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.gemh-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.gemh-table th,
+.gemh-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.gemh-table th {
+  width: 34%;
+  background: #f8fafc;
+  font-weight: 600;
+  color: var(--blue-dark);
+}
+
+.gemh-table td {
+  color: var(--text-main);
+}
+
+/* πίνακες με πολλές στήλες (partners / ΚΑΔ) */
+
+.gemh-table-cols {
+  min-width: 640px;
+}
+
+.gemh-table-cols thead th {
+  background: var(--blue-dark);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.gemh-table-cols tbody td {
+  background: #ffffff;
+}
+
+/* σημείωση στο τέλος */
+.gemh-note {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
 
 
 
@@ -842,12 +975,18 @@ body {
     order: -1;
   }
 
-  @media (max-width: 860px) {
-  .country-image-wrapper {
+ .country-image-wrapper {
     margin: 20px auto 0;
     max-width: 320px;   /* μικρότερη στο κινητό */
   }
-}
+
+    .map-wrapper {
+    margin-top: 18px;
+    min-height: 260px;
+  }
+
+
+
 
 
   .footer-grid {
@@ -872,6 +1011,8 @@ body {
 }
 
 @media (max-width: 640px) {
+
+ 
   .hero {
     min-height: 460px;
   }
@@ -896,6 +1037,21 @@ body {
     padding: 50px 0 56px;
   }
 
+  /* --- SERVICES extra για mobile --- */
+
+    .feature-grid,
+  .country-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+      .gemh-card {
+    padding: 16px 14px 16px;
+  }
+
+  .gemh-header h1 {
+    font-size: 24px;
+  }
+
   .footer-grid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -904,11 +1060,6 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
-    /* --- SERVICES extra για mobile --- */
-
-    .feature-grid,
-  .country-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
+    
 
 }

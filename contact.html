@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Επικοινωνία | Autofrigo Trans</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVBAR (ίδιο με index) ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-area">
+        <div class="logo-icon">
+          🚚
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">Autofrigo Trans</span>
+          <span class="logo-subtitle">Από το 1985</span>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link">Αρχική</a></li>
+          <li><a href="about.html" class="nav-link">Σχετικά</a></li>
+          <li><a href="services.html" class="nav-link">Υπηρεσίες</a></li>
+          <li><a href="contact.html" class="nav-link active">Επικοινωνία</a></li>
+          <li><a href="gemh.html" class="nav-link">Στοιχεία ΓΕΜΗ</a></li>
+        </ul>
+      </nav>
+
+      <a href="contact.html" class="btn btn-primary header-cta">Επικοινωνήστε</a>
+
+      <!-- Mobile menu button -->
+      <button class="burger" id="burgerBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <nav class="mobile-nav" id="mobileNav">
+      <ul>
+        <li><a href="index.html" class="mobile-link">Αρχική</a></li>
+        <li><a href="about.html" class="mobile-link">Σχετικά</a></li>
+        <li><a href="services.html" class="mobile-link">Υπηρεσίες</a></li>
+        <li><a href="contact.html" class="mobile-link active">Επικοινωνία</a></li>
+        <li><a href="gemh.html" class="mobile-link">Στοιχεία ΓΕΜΗ</a></li>
+      </ul>
+
+      <a href="contact.html" class="mobile-contact-btn">Επικοινωνήστε</a>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN CONTACT SECTION (ίδιο grid pattern με WHY US) ===== -->
+  <section class="section section-alt">
+    <div class="container two-col">
+      
+      <!-- Left column: κείμενο + στοιχεία -->
+      <div class="text-col">
+        <h2>Επικοινωνία</h2>
+        <p>
+          Χρειάζεστε αξιόπιστο συνεργάτη για τις διεθνείς μεταφορές και την
+          αποθήκευση των προϊόντων σας; Επικοινωνήστε με την Autofrigo Trans
+          χρησιμοποιώντας τα παρακάτω στοιχεία.
+        </p>
+
+        <!-- Χρησιμοποιούμε το ίδιο pattern με .feature για ομοιομορφία -->
+        <div class="feature">
+          <div class="feature-icon">📍</div>
+          <div>
+            <h4>Διεύθυνση</h4>
+            <p>
+              Οδυσσέως &amp; Ζακύνθου 1<br>
+              144 52 Μεταμόρφωση, Αττική
+            </p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">📞</div>
+          <div>
+            <h4>Τηλέφωνο</h4>
+            <p><a href="tel:+302102849240">210 2849240</a></p>
+          </div>
+        </div>
+
+         <div class="feature">
+          <div class="feature-icon">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:info@autofrigo.gr">info@autofrigo.gr</a></p>
+          </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">📠</div>
+            <div>
+                <h4>Fax</h4>
+                <p>210 2849244</p>
+            </div>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-icon">⏰</div>
+          <div>
+            <h4>Ώρες Λειτουργίας</h4>
+            <p>
+              Δευτέρα – Παρασκευή: 08:30 – 20:30<br>
+              Σάββατο & Κυριακή: Κλειστά<br>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-cta-inline">
+          <a href="tel:+302102849240" class="btn btn-primary">Καλέστε μας</a>
+          <a href="mailto:info@autofrigo.gr" class="btn btn-ghost">Στείλτε Email</a>
+        </div>
+      </div>
+
+      <!-- Right column: Χάρτης -->
+      <div class="image-col">
+        <div class="map-wrapper">
+          <!-- Βάλε εδώ το πραγματικό embed από Google Maps για την έδρα -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3141.1251213468745!2d23.7551518!3d38.0674671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2027a79006f%3A0x6fb06944a78ff45!2zQVVUT0ZSSUdPIFRSQU5TIM6VLs6gLs6VLg!5e0!3m2!1sel!2sgr!4v1764611761863!5m2!1sel!2sgr"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER (ίδιο με index) ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="logo-area footer-logo">
+          <div class="logo-icon">🚚</div>
+          <div class="logo-text">
+            <span class="logo-title">Autofrigo Trans</span>
+            <span class="logo-subtitle">Από το 1985</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Ηγέτες στις διεθνείς μεταφορές ευπαθών προϊόντων με υπερσύγχρονο στόλο ψυγείων.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Γρήγοροι Σύνδεσμοι</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Αρχική</a></li>
+          <li><a href="about.html">Σχετικά</a></li>
+          <li><a href="services.html">Υπηρεσίες</a></li>
+          <li><a href="gemh.html">Στοιχεία ΓΕΜΗ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Υπηρεσίες</h4>
+        <ul class="footer-links">
+          <li>Διεθνείς Μεταφορές</li>
+          <li>Groupage Φορτία</li>
+          <li>Αποθήκευση</li>
+          <li>Μεταφορά Οικοσκευών</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Επικοινωνία</h4>
+        <ul class="footer-links">
+          <li>Οδυσσέως και Ζακύνθου 1<br>14452 Μεταμόρφωση, Αττική</li>
+          <li><a href="tel:+302102849240">210 2849240</a></li>
+          <li><a href="mailto:info@autofrigo.gr">info@autofrigo.gr</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="gemh" class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© 2025 Autofrigo Trans Ltd. All rights reserved.</span>
+        <span>Πιστοποιήσεις: ISO 22000:2018 | ISO 9001:2015</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
